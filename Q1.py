@@ -14,12 +14,16 @@ def plot_data(N, num_bins):
     unif_data = np.random.uniform(1, 0, N)
     #print(Gaussian_data)
 
+    plt.figure(figsize = (12,6))
     plt.subplot(1,2,1)
+    plt.title("Gaussian Distribution")
     plt.hist(gaussian_data, bins = num_bins)
 
 
 
     plt.subplot(1,2,2)
+    plt.title("Uniform Distribution")
+    plt.hist(unif_data)
     plt.show()
 
 
