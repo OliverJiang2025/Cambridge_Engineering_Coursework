@@ -2,7 +2,7 @@ import math
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy
-#from plot_ksdensity import ksdensity
+from plot_ksdensity import ksdensity
 
 N = 1000
 num_bins = 30

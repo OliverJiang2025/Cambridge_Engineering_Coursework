@@ -13,20 +13,21 @@ def ksdensity(data, width=0.3):
         return np.array(pdf)
     return ksd
 
-# Plot normal distribution
-fig, ax = plt.subplots(2)
-x = np.random.randn(1000)
-ax[0].hist(x, bins=30) # number of bins
-ks_density = ksdensity(x, width=0.4)
-# np.linspace(start, stop, number of steps)
-x_values = np.linspace(-5., 5., 100)
-ax[1].plot(x_values, ks_density(x_values))
+if __name__ == "__main__":
+    # Plot normal distribution
+    fig, ax = plt.subplots(2)
+    x = np.random.randn(1000)
+    ax[0].hist(x, bins=30) # number of bins
+    ks_density = ksdensity(x, width=0.4)
+    # np.linspace(start, stop, number of steps)
+    x_values = np.linspace(-5., 5., 100)
+    ax[1].plot(x_values, ks_density(x_values))
 
-# Plot uniform distribution
-fig2, ax2 = plt.subplots(2)
-x = np.random.rand(1000)
-ax2[0].hist(x, bins=20)
-ks_density = ksdensity(x, width=0.2)
-x_values = np.linspace(-1., 2., 100)
-ax2[1].plot(x_values, ks_density(x_values))
-plt.show()
+    # Plot uniform distribution
+    fig2, ax2 = plt.subplots(2)
+    x = np.random.rand(1000)
+    ax2[0].hist(x, bins=20)
+    ks_density = ksdensity(x, width=0.2)
+    x_values = np.linspace(-1., 2., 100)
+    ax2[1].plot(x_values, ks_density(x_values))
+    plt.show()
