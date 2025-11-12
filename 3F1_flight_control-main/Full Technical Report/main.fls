@@ -1,9 +1,9 @@
-PWD e:/Cambridge_Engineering/Part IIA/Coursework/3F1_Lab_Flight_Control/3F1_flight_control-main/Report
+PWD e:/Cambridge_Engineering/Part IIA/Coursework/3F1_Lab_Flight_Control/3F1_flight_control-main/Full Technical Report
 INPUT d:/texlive/2024/texmf.cnf
 INPUT d:/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT d:/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT e:/Cambridge_Engineering/Part IIA/Coursework/3F1_Lab_Flight_Control/3F1_flight_control-main/Report/FTR.tex
-OUTPUT FTR.log
+INPUT e:/Cambridge_Engineering/Part IIA/Coursework/3F1_Lab_Flight_Control/3F1_flight_control-main/Full Technical Report/main.tex
+OUTPUT main.log
 INPUT d:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT d:/texlive/2024/texmf-dist/tex/latex/base/article.cls
 INPUT d:/texlive/2024/texmf-dist/tex/latex/base/size10.clo
@@ -242,10 +242,10 @@ INPUT d:/texlive/2024/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT d:/texlive/2024/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 INPUT d:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT d:/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./FTR.aux
-INPUT ./FTR.aux
-INPUT FTR.aux
-OUTPUT FTR.aux
+INPUT ./main.aux
+INPUT ./main.aux
+INPUT main.aux
+OUTPUT main.aux
 INPUT d:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT d:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT d:/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -255,14 +255,14 @@ INPUT d:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT d:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT d:/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT d:/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
-INPUT ./FTR.out
-INPUT ./FTR.out
-INPUT FTR.out
-INPUT FTR.out
-OUTPUT FTR.pdf
-INPUT ./FTR.out
-INPUT ./FTR.out
-OUTPUT FTR.out
+INPUT ./main.out
+INPUT ./main.out
+INPUT main.out
+INPUT main.out
+OUTPUT main.pdf
+INPUT ./main.out
+INPUT ./main.out
+OUTPUT main.out
 INPUT d:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
@@ -368,9 +368,9 @@ INPUT ../Figures/NyquistDiagram.jpg
 INPUT ../Figures/NyquistDiagram.jpg
 INPUT ../Figures/NyquistDiagram.jpg
 INPUT d:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
-INPUT FTR.aux
-INPUT ./FTR.out
-INPUT ./FTR.out
+INPUT main.aux
+INPUT ./main.out
+INPUT ./main.out
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
