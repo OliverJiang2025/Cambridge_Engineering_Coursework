@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.12)  13 NOV 2025 12:45
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.12)  13 NOV 2025 17:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -462,11 +462,6 @@ Overfull \hbox (5.69046pt too wide) in paragraph at lines 35--36
 [] 
  []
 
-
-Overfull \hbox (3.82632pt too wide) in paragraph at lines 42--44
-[]\TU/lmr/m/n/12 Histogram of Gaussian random numbers overlaid on exact Gaussian curve (scaled): 
- []
-
 File: ../Figures/Figure_1.png Graphic file (type bmp)
 <../Figures/Figure_1.png>
 
@@ -476,18 +471,25 @@ File: ../Figures/Figure_1.png Graphic file (type bmp)
 ]
 File: ../Figures/Figure_2.png Graphic file (type bmp)
 <../Figures/Figure_2.png>
+File: ../Figures/Figure_3.png Graphic file (type bmp)
+<../Figures/Figure_3.png>
+File: ../Figures/Figure_4.png Graphic file (type bmp)
+<../Figures/Figure_4.png>
 
 
 [2]
 
 [3]
+File: ../Figures/Figure_5.png Graphic file (type bmp)
+<../Figures/Figure_5.png>
+
 
 [4]
 
 [5] (/usr/local/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/09/23 1.10c listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 174.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 234.
 
 
 [6]
@@ -501,12 +503,12 @@ Package rerunfilecheck Info: File `3F3_yj375.out' has not changed.
 (rerunfilecheck)             Checksum: D360136B391D4B4BF29549D1EB63DA66;153.
  ) 
 Here is how much of TeX's memory you used:
- 17826 strings out of 473832
- 303141 string characters out of 5729481
- 881557 words of memory out of 5000000
- 40640 multiletter control sequences out of 15000+600000
+ 17859 strings out of 473832
+ 303981 string characters out of 5729481
+ 881720 words of memory out of 5000000
+ 40670 multiletter control sequences out of 15000+600000
  562655 words of font info for 55 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 90i,6n,86p,414b,1201s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,6n,86p,414b,1203s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on 3F3_yj375.pdf (7 pages).

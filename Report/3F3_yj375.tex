@@ -37,10 +37,10 @@ crsid: yj375
 \vspace*{1cm}
 
 \begin{enumerate}
-\item {\bf Uniform and normal random variables.}
+\item {\MakeUppercase{\textbf{Uniform and normal random variables.}}}
 
-Histogram of Gaussian random numbers 
-overlaid on exact Gaussian curve (scaled):
+{\bf Histogram of Gaussian random numbers
+overlaid on exact Gaussian curve (scaled):}
 
 \begin{figure}[htbp] 
     \centering  
@@ -48,7 +48,9 @@ overlaid on exact Gaussian curve (scaled):
 \end{figure}
 
 \newpage
-Histogram of Uniform random numbers overlaid on exact Uniform curve (scaled):
+
+{\bf Histogram of Uniform random numbers overlaid 
+on exact Uniform curve (scaled):}
 
 \begin{figure}[htbp] 
     \centering  
@@ -57,62 +59,125 @@ Histogram of Uniform random numbers overlaid on exact Uniform curve (scaled):
 
 
 
-Kernel density estimate for Gaussian random numbers overlaid on exact Gaussian curve:
+{\bf Kernel density estimate for Gaussian 
+random numbers overlaid on exact Gaussian curve:}
+
+\begin{figure}[htbp] 
+    \centering  
+    \includegraphics[width=1\textwidth]{Figure_3.png}   
+\end{figure}
+
+
+{\bf Kernel density estimate for Uniform random 
+numbers overlaid on exact Gaussian curve:}
+
+\begin{figure}[htbp] 
+    \centering  
+    \includegraphics[width=1\textwidth]{Figure_4.png}   
+\end{figure}
+
+\newpage
+
+{\bf Comment on the advantages and disadvantages of the kernel density 
+method compared with the histogram method for 
+estimation of a probability density from random samples:}
+
+
+According to the plots, kernel smoothing
+function works well with Gaussian random numbers. It is
+very close to the exact Gaussian curve. However, it does not
+perform well when it comes to uniform random numbers.
+We can see that the smoothing function of uniform random
+numbers is close to a Gaussian curve. This is due to large 
+value of width applied in the kernel smoothing function.
+A large value of width underfits the random numbers and makes
+the smoothing function similar to the kernel function itself,
+which is a standard Gaussian distribution in this context.
+
+If the width is set to smaller values, for example, 0.1. 
+The smoothing function provides a good approximation to the 
+expected probability density function, which is a constant from
+0 to 1. But it overfits the data, the density curve is no longer
+a constant value as expected. It can be seen that fine-tuning
+on the width is much harder for uniform random numbers.
+
+To sum up, kernel density method works well with Gaussian 
+random numbers, and becomes harder to fine-tune the parameter
+to fit uniform random numbers.
+
+{\bf Theoretical mean and standard deviation 
+calculation for uniform density as a function of $N$:}
+
+Suppose a set of N independent random samples are taken
+from a uniform distribution:
+
+\begin{equation*}
+    x^{(i)}  \sim p_U(x) = \frac{1}{N}, i = 1,...,N
+\end{equation*}
+The probability that a sample $x^{(j)}$ lies within
+a particular bin of the histogram is:
+\begin{equation*}
+    p_j = \int^{c_j + \delta/2}_{c_j-\delta/2} p(x) dx = \frac{\delta}{N}
+\end{equation*}
+in which $\delta$ represents the size of a bin.
+\newline
+Thus, the mean of the count data in bin $j$ is 
+$Np_j = \delta$.
+The variance is $Np_j(1-p_j) = \delta (1-\frac{\delta}{N})$
+
+
+
+{\bf Explain behaviour as $N$ becomes large:}
+Assuming a constant bin size, it is clear that
+the mean is not affected by N, and the variance
+decreases as N increases.
+
+
+{\bf Plot of histograms for $N=100$,  
+$N=1000$ and $N=10000$ with theoretical mean  
+and $\pm 3$ standard deviation lines:}
+
+\begin{figure}[htbp] 
+    \centering  
+    \includegraphics[width=1\textwidth]{Figure_5.png}   
+\end{figure}
+
+
+{\bf Are your histogram results consistent 
+with the multinomial distribution theory? }
+For the case that N = 1000 and 10000, the histogram results
+are consistent with the multinomial distribution theory.
+Considering the counts of each bin as a random variable, 
+its distribution approaches to Gaussian distribution 
+as $N \rightarrow \infty$
+according to Central Limit Theorem.
+\newline
+For a Gaussian distribution, 99\% of random variable lies within
+the interval $(\mu - 3\sigma, \mu+3\sigma)$. From the plots that
+N = 1000 and N = 10000, we can see that it is true.
+\newline
+However, the plot of N = 100 gives a negative value of $\mu - 3\sigma$.
+Since $\sigma^2 = \delta(1-\frac{\delta}{N})$, a small N gives a 
+large $\sigma$. This implies that histogram estimatio is not
+suitable for a set of random numbers with a small size.
+
+
+
+\item \MakeUppercase{{\textbf{Functions of random variables}}}
+
+{\bf For normally distributed ${\cal N}(x|0,1)$ 
+random variables, take $y=f(x)=ax+b$. 
+Calculate $p(y)$ using the Jacobian formula:}
+
+The Jacobian formula provided by lab handout:
+\begin{equation*}
+    p(y) = \frac{p(x)}{|dy/dx|}|_{x = f^{-1}(y)}
+\end{equation*}
 
 
 
 
 
-Kernel density estimate for Uniform random numbers overlaid on exact Gaussian curve:
-
-
-{\em Include your graphic here}
-\vspace{3in}
-
-Comment on the advantages and disadvantages of the kernel density method compared with the histogram method for estimation of a probability density from random samples:
-
-
-{\em Text answer  here}
-\vspace{3in}
-
-
-
-Theoretical  mean and standard deviation calculation for uniform density as a function of $N$:
-
-
-{\em Text/maths answer  here}
-\vspace{3in}
-
-
-Explain behaviour as $N$ becomes large:
-
-{\em Text/maths answer  here}
-\vspace{3in}
-
-
-
-Plot of histograms for $N=100$,  $N=1000$ and $N=10000$ with theoretical mean  and $\pm 3$ standard deviation lines:
-
-
-{\em Include your graphic here}
-\vspace{3in}
-
-
-
-
- Are your histogram results consistent with the multinomial distribution theory? 
-
-
-{\em Text/maths answer  here}
-\vspace{3in}
-
-
-\item {\bf Functions of random variables}
-For normally distributed ${\cal N}(x|0,1)$ random variables, take $y=f(x)=ax+b$. Calculate $p(y)$ using the Jacobian formula:
-
-
-{\em Text/maths answer  here}
-\vspace{3in}
 
 
 Explain how this is linked to the general normal density with non-zero mean and non-unity variance:

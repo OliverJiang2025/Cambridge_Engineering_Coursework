@@ -5,7 +5,7 @@ from plot_ksdensity import ksdensity
 
 N = 1000
 num_bins = 50
-width = 1 # width of ks density function 
+width = 0.4 # width of ks density function 
 
 
 def plot_data(N, num_bins, width, type, kernel):
@@ -21,7 +21,7 @@ def plot_data(N, num_bins, width, type, kernel):
     unif_pdf = np.ones(N)
     
     ks_density = ksdensity(gauss_data, width=width)
-
+    ks_density_unif = ksdensity(unif_data, width=width)
 
     plt.figure(figsize = (12,6))
     if type == "Gaussian":
@@ -29,8 +29,8 @@ def plot_data(N, num_bins, width, type, kernel):
             plt.plot(gauss_x, gauss_pdf, 
                      label = 'Theoretical Gaussian Distribution')
             plt.plot(gauss_x, ks_density(gauss_x),
-                     label = 'kernel density estimate for Gaussian random numbers')
-            plt.title("Kernel density estimate for Gaussian random numbers overlaid on exact Gaussian curve")
+                     label = 'Kernel density estimate for Gaussian random numbers')
+            plt.title(f"Kernel density estimate with width = {width} for Gaussian random numbers overlaid on exact Gaussian curve")
         else:
             plt.hist(gauss_data, bins = num_bins, density = True,
                      label = 'random generated Gaussian number')
@@ -39,15 +39,20 @@ def plot_data(N, num_bins, width, type, kernel):
             plt.title("Histogram of Gaussian random numbers overlaid on exact Gaussian curve")
     elif type == "Uniform":
         if kernel:
-            plt.hist(unif_data, bins = num_bins, density = True,
-                     label = 'Histogram of Uniform random numbers')
-            plt.plot(unif_x, unif_pdf,
-                     label = '')
+            mu = 0.5
+            sigma = width
+            x = np.linspace(-1,2,N)
+            plt.plot(x, stats.norm.pdf(x, 0.5, width**(1/2)),
+                     label = f'exact Gaussian curve with mean = {mu}, variance = {sigma}')
+            plt.plot(x, ks_density_unif(x),
+                     label = 'Kernel density estimate for Uniform random numbers')
+            plt.title(f'Kernel density estimate with width = {width} for uniform random number overlaid on exact Gaussian curve')
         else:
             plt.hist(unif_data, bins = num_bins, density = True,
                      label = 'Uniform random numbers')
             plt.plot(unif_x, unif_pdf,
                      label = 'exact uniform curve')
+            plt.title('Histogram of Uniform numbers overlaid on exact uniform curve')
 
     #plt.tight_layout()
     
@@ -56,4 +61,4 @@ def plot_data(N, num_bins, width, type, kernel):
 
 
 
-plot_data(N, num_bins, width, "Uniform", kernel = False)
+plot_data(N, num_bins, width, "Uniform", kernel = True)
