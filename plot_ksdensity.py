@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def ksdensity(data, width=0.3):
+def ksdensity(data, width):
     # returns kernel smoothing function from data points in data
     def ksd(x_axis):
         def n_pdf(x, mu=0., sigma=1.): # normal pdf
