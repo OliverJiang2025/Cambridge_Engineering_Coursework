@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.12)  19 NOV 2025 10:54
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.12)  19 NOV 2025 12:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -365,8 +365,7 @@ File: l3backend-xetex.def 2024-05-08 L3 backend support: XeTeX
 \l__pdf_internal_box=\box66
 \g__pdf_backend_annotation_int=\count305
 \g__pdf_backend_link_int=\count306
-)
-No file yj375.aux.
+) (./yj375.aux)
 \openout1 = `yj375.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
@@ -389,19 +388,21 @@ LaTeX Font Info:    ... okay on input line 22.
 
 [1
 
-] (./yj375.aux)
+]
+
+[2] (./yj375.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 30695 strings out of 473832
- 801767 string characters out of 5729481
+ 30698 strings out of 473832
+ 801809 string characters out of 5729481
  1402996 words of memory out of 5000000
- 53507 multiletter control sequences out of 15000+600000
+ 53508 multiletter control sequences out of 15000+600000
  558877 words of font info for 41 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  84i,6n,91p,411b,149s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on yj375.pdf (1 page).
+Output written on yj375.pdf (2 pages).
