@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  25 NOV 2025 19:51
-=======
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.12)  25 NOV 2025 14:53
->>>>>>> 1ef28e9cea1116fd2abe5cbc8a45dad8707520de
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.12.28)  25 NOV 2025 20:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -429,7 +425,6 @@ Package caption Info: End \AtBeginDocument code.
 
 [1
 
-<<<<<<< HEAD
 {d:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 <./Figures/Figure1-2.jpg, id=11, 1708.3825pt x 1280.785pt>
 File: ./Figures/Figure1-2.jpg Graphic file (type jpg)
@@ -444,89 +439,68 @@ Package pdftex.def Info: ./Figures/Figure1-3.jpg  used on input line 75.
 <./Figures/Buck.jpg, id=13, 2512.38625pt x 1003.75pt>
 File: ./Figures/Buck.jpg Graphic file (type jpg)
 <use ./Figures/Buck.jpg>
-Package pdftex.def Info: ./Figures/Buck.jpg  used on input line 88.
+Package pdftex.def Info: ./Figures/Buck.jpg  used on input line 89.
 (pdftex.def)             Requested size: 483.69684pt x 193.24161pt.
-<./Figures/Figure2-2-1.jpg, id=14, 1708.3825pt x 1280.785pt>
-File: ./Figures/Figure2-2-1.jpg Graphic file (type jpg)
-<use ./Figures/Figure2-2-1.jpg>
-Package pdftex.def Info: ./Figures/Figure2-2-1.jpg  used on input line 101.
-(pdftex.def)             Requested size: 193.47577pt x 145.04948pt.
-<./Figures/Figure2-2-2.jpg, id=15, 1708.3825pt x 1280.785pt>
-File: ./Figures/Figure2-2-2.jpg Graphic file (type jpg)
-<use ./Figures/Figure2-2-2.jpg>
-Package pdftex.def Info: ./Figures/Figure2-2-2.jpg  used on input line 108.
-(pdftex.def)             Requested size: 193.47577pt x 145.04948pt.
-
-
-[2 <./Figures/Figure1-2.jpg> <./Figures/Figure1-3.jpg> <./Figures/buck.jpg>]
-
-[3 <./Figures/Figure2-2-1.jpg> <./Figures/Figure2-2-2.jpg>] (./yj375.aux)
-=======
-]
-File: ./Figures/Figure1-2.jpg Graphic file (type bmp)
-<./Figures/Figure1-2.jpg>
-File: ./Figures/Figure1-3.jpg Graphic file (type bmp)
-<./Figures/Figure1-3.jpg>
-File: ./Figures/Buck.jpg Graphic file (type bmp)
-<./Figures/Buck.jpg>
 LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
- (/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-[2]
-File: ./Figures/Figure2-2-1.jpg Graphic file (type bmp)
-<./Figures/Figure2-2-1.jpg>
-File: ./Figures/Figure2-2-2.jpg Graphic file (type bmp)
-<./Figures/Figure2-2-2.jpg>
-File: ./Figures/Figure2-3-1.jpg Graphic file (type bmp)
-<./Figures/Figure2-3-1.jpg>
-File: ./Figures/Figure2-3-2.jpg Graphic file (type bmp)
-<./Figures/Figure2-3-2.jpg>
-File: ./Figures/Figure2-3-3.jpg Graphic file (type bmp)
-<./Figures/Figure2-3-3.jpg>
+[2 <./Figures/Figure1-2.jpg> <./Figures/Figure1-3.jpg> <./Figures/buck.jpg>]
+<./Figures/Figure2-2-1.jpg, id=20, 1712.3975pt x 1283.79625pt>
+File: ./Figures/Figure2-2-1.jpg Graphic file (type jpg)
+<use ./Figures/Figure2-2-1.jpg>
+Package pdftex.def Info: ./Figures/Figure2-2-1.jpg  used on input line 109.
+(pdftex.def)             Requested size: 193.47577pt x 145.0379pt.
+<./Figures/Figure2-2-2.jpg, id=21, 1708.3825pt x 1280.785pt>
+File: ./Figures/Figure2-2-2.jpg Graphic file (type jpg)
+<use ./Figures/Figure2-2-2.jpg>
+Package pdftex.def Info: ./Figures/Figure2-2-2.jpg  used on input line 116.
+(pdftex.def)             Requested size: 193.47577pt x 145.04948pt.
+<./Figures/Figure2-3-1.jpg, id=22, 1708.3825pt x 1280.785pt>
+File: ./Figures/Figure2-3-1.jpg Graphic file (type jpg)
+<use ./Figures/Figure2-3-1.jpg>
+Package pdftex.def Info: ./Figures/Figure2-3-1.jpg  used on input line 155.
+(pdftex.def)             Requested size: 145.11052pt x 108.77733pt.
+<./Figures/Figure2-3-2.jpg, id=23, 1708.3825pt x 1280.785pt>
+File: ./Figures/Figure2-3-2.jpg Graphic file (type jpg)
+<use ./Figures/Figure2-3-2.jpg>
+Package pdftex.def Info: ./Figures/Figure2-3-2.jpg  used on input line 162.
+(pdftex.def)             Requested size: 145.11052pt x 108.77733pt.
+<./Figures/Figure2-3-3.jpg, id=24, 1708.3825pt x 1280.785pt>
+File: ./Figures/Figure2-3-3.jpg Graphic file (type jpg)
+<use ./Figures/Figure2-3-3.jpg>
+Package pdftex.def Info: ./Figures/Figure2-3-3.jpg  used on input line 169.
+(pdftex.def)             Requested size: 145.11052pt x 108.77733pt.
 
 
-[3]
+[3 <./Figures/Figure2-2-1.jpg> <./Figures/Figure2-2-2.jpg>]
 
-[4]
+[4 <./Figures/Figure2-3-1.jpg> <./Figures/Figure2-3-2.jpg> <./Figures/Figure2-3-3.jpg>]
 
 [5] (./yj375.aux)
->>>>>>> 1ef28e9cea1116fd2abe5cbc8a45dad8707520de
  ***********
 LaTeX2e <2024-11-01> patch level 1
 L3 programming layer <2024-12-09>
  ***********
  ) 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 32004 strings out of 473254
- 817733 string characters out of 5722070
- 1418781 words of memory out of 5000000
- 54939 multiletter control sequences out of 15000+600000
- 559878 words of font info for 42 fonts, out of 8000000 for 9000
+ 32093 strings out of 473254
+ 819450 string characters out of 5722070
+ 1423781 words of memory out of 5000000
+ 55009 multiletter control sequences out of 15000+600000
+ 565473 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,93p,461b,501s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on yj375.pdf (3 pages, 1187234 bytes).
+ 84i,9n,93p,461b,537s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on yj375.pdf (5 pages, 2005366 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 20 compressed objects within 1 object stream
+ 81 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-=======
- 32339 strings out of 473832
- 833764 string characters out of 5729481
- 1442359 words of memory out of 5000000
- 55104 multiletter control sequences out of 15000+600000
- 565094 words of font info for 68 fonts, out of 8000000 for 9000
- 1348 hyphenation exceptions out of 8191
- 84i,8n,91p,411b,538s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-Output written on yj375.pdf (5 pages).
->>>>>>> 1ef28e9cea1116fd2abe5cbc8a45dad8707520de

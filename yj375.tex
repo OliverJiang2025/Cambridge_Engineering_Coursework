@@ -115,7 +115,7 @@ shows the reading in V on display.
         \centering
         \includegraphics[width=\linewidth]{Figure2-2-2.jpg}
         \caption{Reading with $V_o$ = 18V}
-        \label{subfig:2-2-2}
+        \label{fig:2-2-2}
     \end{subfigure}
     \caption{Scope readings of section 2-2}
     \label{fig:2-2}
@@ -178,8 +178,28 @@ current $I_o$ should be obtained from the readings of
 CH4, which measures the inductor current $i_L$. By making
 the assumption that the output smoothing capacitor is large
 enough that all ripple current goes into the capacitor, 
-$I_o = i_{L\text{avg}}$. This average value is obtained by
-the oscilliscope.
+$I_o = i_{L\text{avg}}$. This average value can be obtained
+by the built-in measurements of the oscilliscope.
+From Figure \ref{fig:2-2-1} and \ref{fig:2-2-2}, we have 
+$I_o = 1.9285A$ for $V_o = 12V$ and $I_o = 5.3808A$ for $V_o = 18V$.
+Thus, the load resistances are calculated as $6.22 \Omega$ and $3.34 \Omega$
+for this two cases respectively. There is a huge discrepancy as expected. 
+Only one measurement is taken per case and the parasitic resistance is 
+not accounted for. We could improve this estimate of load resistance
+by taking multiple measurements and averaging them, or by considering 
+the parasitic resistance of the inductor and diode voltage drop.
+
+For now, we can only conclude that the load resistance is somewhere
+between $3 \Omega$ and $6 \Omega$.
+
+After that, interest focuses on the inductance $L_1$, $L_2$, and $L_3$.
+This can be found by considering the
+peak-to-peak ripple current $\Delta I_L$.
+
+From theory in Continuous Conduction Mode, $\Delta I_L = \frac{V_d D(1-D)}{f_s L}$, where
+$f_s$ is the switching frequency, 100kHz. Rearranging gives
+$L = \frac{V_d D(1-D)}{f_s \Delta I_L}$.
+
 
 
 \newpage
