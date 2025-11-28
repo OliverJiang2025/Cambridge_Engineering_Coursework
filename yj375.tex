@@ -180,6 +180,7 @@ the assumption that the output smoothing capacitor is large
 enough that all ripple current goes into the capacitor, 
 $I_o = i_{L\text{avg}}$. This average value can be obtained
 by the built-in measurements of the oscilliscope.
+
 From Figure \ref{fig:2-2-1} and \ref{fig:2-2-2}, we have 
 $I_o = 1.9285A$ for $V_o = 12V$ and $I_o = 5.3808A$ for $V_o = 18V$.
 Thus, the load resistances are calculated as $6.22 \Omega$ and $3.34 \Omega$
@@ -190,7 +191,8 @@ by taking multiple measurements and averaging them, or by considering
 the parasitic resistance of the inductor and diode voltage drop.
 
 For now, we can only conclude that the load resistance is somewhere
-between $3 \Omega$ and $6 \Omega$.
+between $3 \Omega$ and $6 \Omega$, which is in the range of the 10R 
+variable resistor.
 
 After that, interest focuses on the inductance $L_1$, $L_2$, and $L_3$.
 This can be found by considering the
@@ -203,19 +205,119 @@ Rearranging gives
 $L = \frac{V_d D(1-D)}{f_s \Delta I_L}$.
 By looking at the waveform of inductor current, we can see that
 the buck converter operates at CCM for the first two cases in 
-Figure \ref{fig:2-3}.
+Figure \ref{fig:2-3}. $\Delta I_L$ is found to be 3.0047A for the
+case with $L_3$ ON, and 6.5728A for the case with $L_3$ and $L_2$ ON.
 
-$L_3 = \frac{30 \times 0.53 \times (1-0.53)}{100000 \times 0.346} = 217.6 \mu H$.
-$L_2 // L_3 = \frac{L_2 L_3}{L_2 + L_3} = \frac{30 \times 0.53 \times (1-0.53)}{100000 \times 0.222} = 339.9 \mu H$.
-We can get $L_2 = 567.8 \mu H$ from above two equations.
+$L_3 = \frac{30 \times 0.53 \times (1-0.53)}{100000 \times 3.0047} = 24.9 \mu H$
+
+$L_2 // L_3 = \frac{30 \times 0.53 \times (1-0.53)}{100000 \times 6.5728} = 11.4 \mu H$
+
+We can get $L_2 = 21.0 \mu H$.
 
 For the last case in Figure \ref{fig:2-3}, the buck converter now operates in DCM.
-Thus, the previous formula is not applicable.
+Thus, the previous formula is not applicable. However, we can still find 
+$K = \frac{2L}{RT_s}$ by the relation of voltage transfer ratio in DCM:
+\begin{equation*}
+    M(D,K) = \frac{V_o}{V_d} = \frac{2}{1+\sqrt{1+\frac{4K}{D^2}}}
+\end{equation*}
+Rearranging gives $K = \frac{D^2(1-M)}{M^2}$. With D = 0.53, 
+$M = \frac{V_o}{V_d} = \frac{17.471}{30} = 0.58$, K = 0.351.
+Thus, $L_1 // L_2 // L_3 = \frac{K R }{2f_s} = 5.27 \mu H$.
 
+We can get $L_1 = 18.4 \mu H$.
 
+Lastly, in session 2-4, duty ratio is adjusted under DCM to see its 
+effect on voltage transfer ratio. The readings are shown in Figure \ref{fig:2-4}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 0.5\linewidth]{Figure2-4.jpg}
+    \caption{Scope reading of section 2-4}
+    \label{fig:2-4}
+\end{figure}
+
+For $M = \frac{V_o}{V_d} = 0.5$, $D = \sqrt{\frac{KM^2}{1-M}} = 0.418$.
+In the reading, we have D = 0.43, which is quite close to the theoretical value.
 
 \newpage
 \section*{Exercise 3: DC-DC Boost Converter}
+In this Exercise, every testing schematic is the same as shown in Exercise 2,
+except that the buck converter is replaced by a boost converter. The 
+testing schematic of the DC-DC Boost Converter is shown by Figure \ref{fig:boost}.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width = 1\linewidth]{Boost.jpg}
+    \caption{Schematic of DC-DC Boost Converter}
+    \label{fig:boost}
+\end{figure}
+ 
+
+The measurements are carried by four channels of
+the oscilliscope.
+\begin{enumerate}
+    \item CH1: Gate pulse voltage $v_G$
+    \item CH2: MOSFET voltage $v_S$
+    \item CH3: Output DC voltage $V_o$
+    \item CH4: Inductor current $i_L$
+\end{enumerate}
+
+\begin{figure}[htbp] 
+    \centering 
+    \begin{subfigure}[t]{0.4\textwidth} % 子图宽度可适度扩大
+        \centering
+        \includegraphics[width=\linewidth]{Figure3-2-1.jpg} 
+        \caption{Reading with $V_o$ = 25V}
+        \label{fig:3-2-1}
+    \end{subfigure}
+    \hspace{2cm}
+    \begin{subfigure}[t]{0.4\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Figure3-2-2.jpg}
+        \caption{Reading with $V_o$ = 35V}
+        \label{fig:3-2-2}
+    \end{subfigure}
+    \caption{Scope readings of section 3-2}
+    \label{fig:3-2}
+\end{figure}
+
+To find the load resistance $R_L = \frac{V_o}{I_o}$, we still
+read $I_o$ from CH4, which measures the inductor current $i_L$.
+Note that from KCL, $i_L = I_o + i_C$, where $i_C$ is the current
+through the output capacitor. 
+
+Under steady state operation of a capacitor, the average current
+through it is zero. Thus, $I_{o} = i_{L\text{avg}}$ still holds.
+For $V_o = 25V$, $I_o = 1.2072A$, and for $V_o = 35V$, $I_o = 1.6153A$,
+as shown in Figure \ref{fig:3-2}.
+We can get $R_L = 21.1 \Omega$ and $22.3 \Omega$ respectively.
+The load resistances are quite close to each other under two operations.
+We can conclude that the load resistance is about $21.6 \Omega$.
+
+\begin{figure}[htbp] 
+    \centering 
+    \begin{subfigure}[t]{0.3\textwidth} % 子图宽度可适度扩大
+        \centering
+        \includegraphics[width=\linewidth]{Figure3-3-1.jpg} 
+        \caption{Reading with $L_3$ ON}
+        \label{fig:3-3-1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Figure3-3-2.jpg}
+        \caption{Reading with $L_3$ and $L_2$ ON}
+        \label{subfig:3-3-2}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{Figure3-3-3.jpg}
+        \caption{Reading with $L_3$, $L_2$, and $L_1$ ON}
+        \label{subfig:3-3-3}
+    \end{subfigure}
+    \caption{Scope readings of section 2-3}
+    \label{fig:3-3}
+\end{figure}
+
 
 
 \end{document}
