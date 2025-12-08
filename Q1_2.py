@@ -25,13 +25,13 @@ for i in range(3):
     unif_data = np.random.uniform(0,1,N)
 
     axs[i].hist(unif_data, bins = bin_num)
-    axs[i].plot(unif_data, mu*np.ones(N), label = 'mean')
-    axs[i].plot(unif_data, (mu+3*sd)*np.ones(N), label = 'mean + 3*sd')
-    axs[i].plot(unif_data, (mu-3*sd)*np.ones(N), label = 'mean - 3*sd')
+    axs[i].plot(unif_data, mu*np.ones(N), label = '$\mu$')
+    axs[i].plot(unif_data, (mu+3*sd)*np.ones(N), label = '$\mu$ + 3$\sigma$')
+    axs[i].plot(unif_data, (mu-3*sd)*np.ones(N), label = '$\mu$ - 3$\sigma$')
     axs[i].set_title(f'N = {N}')
     axs[i].legend(loc = 'lower right', fontsize = 8)
 
-
+fig.suptitle('Histogram of Uniform random numbers with different N')
 plt.show()
         
 

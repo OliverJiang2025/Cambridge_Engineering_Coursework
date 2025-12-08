@@ -36,12 +36,12 @@ axs[1].axvline(b, color = 'red', linestyle = '--', label = '$\mu$')
 axs[1].set_title(f'Distribution of y=ax+b ($\sigma^2$ = a = {a}, $\mu$ = b = {b})')
 axs[1].legend()
 """
-plt.hist(g_data, bins = num_bin, density = True)
-plt.plot(g, g_theoretical, linestyle = '--')
+plt.hist(g_data, bins = num_bin, density = True, label = 'histogram of $y=x^2$')
+plt.plot(g, g_theoretical, linestyle = '--', label = 'theoretical distribution')
 plt.ylim(0,2)
 plt.title('Distribution of y=$x^2$')
 
-plt.legend(['theoretical distribution'])
+plt.legend()
 
 
 plt.show()

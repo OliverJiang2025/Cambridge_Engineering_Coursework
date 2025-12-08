@@ -67,7 +67,7 @@ random numbers with underlying
 distribution. Uniform and normal
 random variables are generated,
 and they are visualized by histogram
-and kernel density function.
+and kernel smoothing density (KSD) function.
 Functions of random variables 
 are also discussed.
 Inverse CDF method is used to 
@@ -78,17 +78,315 @@ distribution is discussed.
 
 \section{Methods, Results, and Discussion}
 \subsection{Uniform and normal random variables}
+In this section, uniform and normal random variables
+are generated and visualized by using histogram
+and kernel density function. The results are
+compared and discussed.
 \subsubsection{Histogram and kernel density function}
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=1\textwidth]{Figures/Figure_1.png}
+    \caption{Histogram and KSD of uniform and normal random variables}
+    \label{fig:fig1}
+\end{figure}
+
+In Figure \ref{fig:fig1}, 1000 random Gaussian numbers
+and 1000 random uniform numbers are generated.
+The histograms are generated with 50 bins and
+the KSD functions has a width of 0.4 with a 
+Gaussian kernel, in the form of\cite{labsheet}:
+\begin{equation*}
+  \pi_{KS}(x) = \frac{1}{N} \sum_{i=1}^{N} \frac{1}{\sigma} \mathcal{K}\left( \frac{x-x^{(i)}}{\sigma} \right)
+\end{equation*}
+
+Where $\mathcal{K}(\cdot) \sim \mathcal{N}(\cdot | 0,1)$, $\sigma$ is the width of the kernel.
+
+For Gaussian random variables, the KSD provides a smooth approximation,
+which closely follows the shape of the theoretical Gaussian distribution curve.
+The histogram, on the other hand, shows more details and fluctuations 
+due to the discrete nature of the bins. 
+
+At the same time, the histogram
+may not align with the theoretical curve perfectly due to the 
+choice of bin width and the number of samples.
+
+On the other hand, the uniform random variables show a different behavior
+in histogram and KSD. The shape of the histogram is more likely to be
+affected by the bin width, leading to a step-like appearance.
+Also, it is prone to be affected by random fluctuations.
+
+The KSD, however, smooths out these fluctuations and provides a more
+continuous representation of the uniform distribution. At the same time,
+it can lead to deviation from the ideal uniform shape,
+due to the discontinuities at the edges of the uniform distribution.
+This is because the kernel width is comparable to the range of the uniform distribution.
+
+To discuss more about the effect of kernel width, several KSDs with distinct kernel widths
+are plotted. 
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/Figure_2.png}
+  \caption{KSD of uniform random variables with different kernel widths}
+  \label{fig:fig2}
+\end{figure}
+
+From Figure \ref{fig:fig2}, we can see that with a small kernel width (0.05 and 0.1),
+the KSD captures more details of the uniform distribution. It is reasonable
+to state that this is a uniform distribution only by looking at the KSD.
+However, with a larger kernel width that is comparable to the range of the uniform distribution
+, the KSD smooths out the details and deviates from the ideal uniform shape.
+To conclude, there is a trade-off when choosing the kernel width between 
+smoothing and shape deviation. 
+
+
 \subsubsection{Multinomial distribution}
 
+The Multinomial distribution is a generalization of the binomial distribution \cite{Multinomial},
+and it can be used to discribe a distribution within a histogram. 
+
+Suppose there are some fixed finite number of bins, $J$, and
+there are $N$ samples to be placed into these bins. 
+Each bin has a probability $p_j$ of receiving a sample,
+where $j = 1, 2, \ldots, J$ and $\sum_{j=1}^{J} p_j = 1$.
+
+And $p_j$ can be calculated by integrating the
+underlying probability density function $p(x)$.
+\begin{equation*}
+  p_j = \int^{c_j+\delta /2}_{c_j-\delta /2} p(x) dx
+\end{equation*}
+Where $c_j$ is the center of bin $j$, and $\delta$ is the width of each bin.
+
+Let random variable $\vec{X} = (X_1, X_2, \ldots, X_J)$
+represents the number of samples in each bin.
+
+Then the PMF of the Multinomial distribution is given by:
+\begin{equation*}
+  P(\vec{X} = \vec{n}) = \frac{N!}{n_1! n_2! \ldots n_J!} p_1^{n_1} p_2^{n_2} \ldots p_J^{n_J}
+\end{equation*}
+Where $\vec{n} = (n_1, n_2, \ldots, n_J)$. When $\dim{\vec{X}}$ is 2, 
+it reduced to a binomial distribution. 
+
+The term $p_j^{n_j}$ represents the probability of $n_j$ samples falling into bin $j$,
+as each sample has a probability $p_j$ of falling into that bin.
+
+The factorial terms account for the different arrangements of samples across the bins,
+considering that the order of samples within each bin does not matter.
+
+Expectation of $X_j$ is given by:
+\begin{equation*}
+  \mathbb{E}[X_j] = N p_j
+\end{equation*}
+And Variance of $X_j$ is given by:
+\begin{equation*}
+  \text{Var}(X_j) = N p_j (1 - p_j)
+\end{equation*}
+
+For uniform distributed random variables, $p(x) = \frac{1}{N}$,
+so $p_j = \frac{\delta}{N}$. 
+
+$\mathbb{E}(X_j) = \frac{N \delta}{N} = \delta$,
+$\text{Var}{(X_j)} = N \frac{\delta}{N} (1 - \frac{\delta}{N}) = \delta (1 - \frac{\delta}{N})$.
+
+Three sets of uniform random variables are generated with N = 100, 1000, 10000 respectively.
+The histograms are plotted with 30 bins, and the results are shown in Figure \ref{fig:fig3}.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/Figure_3.png}
+  \caption{Histograms of uniform random variables with different sample sizes}
+  \label{fig:fig3}
+\end{figure}
+
+We can see that the normalized mean of each bin (height of each bar) is fixed
+by the bin width, which is $\frac{1}{30} \approx 0.0333$.
+
+For N = 1000 and 10000, the histogram bars fluctuate around this value
+and fits in the interval $[\mu - 3\sigma, \mu + 3\sigma]$, as expected.
+
+However, for N = 100, the histogram bars show significant deviation from the expected range.
+This is because with a small sample size, the variance is relatively large compared to the mean.
+It is implied that a small sample size may not accurately represent the underlying distribution
+by using a histogram.
+
+This analysis can also be applied to Gaussian random variables.
+
+To start with,
+\begin{equation*}
+  p_j = \int^{c_j+\delta /2}_{c_j-\delta /2} p(x) dx = F(c_j+\delta /2) - F(c_j-\delta /2)
+\end{equation*}
+Where $F(x)$ is the CDF of the Gaussian distribution. This expression helps to 
+evaluate $p_j$ in \textit{python} using \textit{scipy.stats.norm.cdf} function.
+
+Then, $\mathbb{E}(X_j)$ and $\text{Var}(X_j)$ can be calculated accordingly.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/Figure_4.png}
+  \caption{Histograms of Gaussian random variables with different sample sizes}
+  \label{fig:fig4}
+\end{figure}
+
+As shown in Figure \ref{fig:fig4}, the histograms of Gaussian random variables
+are plotted with corresponding expected mean and variance for each bin height. 
+Similar to the uniform distribution case, it is expected that the bar heights
+lie within the interval $[\mu - 3\sigma, \mu + 3\sigma]$.
+
+However, in this case, it can be observed that $\sigma$ is no longer a constant
+throughout the range of random variables, since $p_j$ varies for different bins.
+$\text{Var}(X_j) = Np_j(1-p_j)$. The variance is larger at the center of the distribution
+where $p_j$ is larger, and smaller at the tails where $p_j$ approaches to 0 and 1.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1\textwidth]{Figures/Figure_5.png}
+  \caption{Comparing variance of histogram height and $p_j$}
+  \label{fig:fig5}
+\end{figure}
+
+This argument is visualized in Figure \ref{fig:fig5},
+where the variance of histogram height and $p_j$ are plotted together.
+It is clear that the variance is small when $p_j$ is small and at the tails. 
+
+Due to the limited bin size, $\max{(p_j)}$ is around 0.1.
+In this range, $\text{Var}(X_j) \approx N p_j$, which agrees 
+with the linear trend shown.
+
+\section{Function of Random Variables}
+
+
+The Jacobian formula for change of variables in probability density functions 
+states that if $y = f(x)$ is a differentiable and invertible function,
+then the probability density function of the transformed random variable $y$ is given by:
+\begin{equation*}
+    p(y) = \frac{p(x)}{|dy/dx|}\bigg|_{x = f^{-1}(y)}
+\end{equation*}
+
+For a linear transformation,
+$y = f(x) = ax + b \Rightarrow x = f^{-1}(y) = \frac{y-b}{a}$, and 
+$dy/dx = a$.
+With $f(\cdot)$ being the standard Gaussian distribution:
+\begin{equation*}
+    p(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}
+\end{equation*}
+
+\begin{equation*}
+    p(y) = \frac{1}{|a|} \cdot \frac{1}{\sqrt{2\pi}} e^{-\frac{(\frac{y-b}{a})^2}{2}} = \frac{1}{\sqrt{2\pi a^2}} e^{-\frac{(y-b)^2}{2a^2}}
+\end{equation*}
 
 
 
+For a general normal distribution ${\cal N}(x|\mu,\sigma^2)$,
+the probability density function is:
+\begin{equation*}
+    p(x) = \frac{1}{\sqrt{2\pi \sigma^2}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+\end{equation*}
+We can see that the transformed random variable is ${\cal N}(y|b,a^2)$,
+the linear transformation of a normal distribution is still a normal distribution,
+with a shift of mean from $\mu$ to $\mu + b$ and a scaling of variance from $\sigma^2$ to $a^2 \sigma^2$.
+
+\begin{figure}[htbp] 
+    \centering  
+    \includegraphics[width=1\textwidth]{Figures/Figure_6.png}   
+    \caption{Histogram of linearly transformed Gaussian random variables and corresponding PDF}
+    \label{fig:fig6}
+\end{figure}
+
+We can see from Figure \ref{fig:fig6} that the histogram of transformed random samples with
+a = 6 and b = 3 fits well with the probability density function with
+variance 6 and mean 3.
+
+
+Now, consider a non-linear transformation, $y = f(x) = x^2$.
+\begin{equation*}
+  x = f^{-1}(y) = \begin{cases}
+    \sqrt{y}, & x \geq 0 \\ 
+    -\sqrt{y}, & x \leq 0
+  \end{cases}
+\end{equation*}
+We can see that $f(\cdot)$ is not one-to-one,
+so we need to consider both branches of the inverse function.
+Also, $|dy/dx| = 2|x| = 2 \sqrt{y}$.
+\begin{align*}
+    p(y) &= \frac{p(x)}{|dy/dx|}\bigg|_{x = f^{-1}(y)} + \frac{p(x)}{|dy/dx|}\bigg|_{x = -f^{-1}(y)} \\
+    &= \frac{1}{2\sqrt{y}} \cdot \frac{1}{\sqrt{2\pi}} e^{-\frac{(\sqrt{y})^2}{2}} + \frac{1}{2\sqrt{y}} \cdot \frac{1}{\sqrt{2\pi}} e^{-\frac{(-\sqrt{y})^2}{2}} \\
+    &= \frac{1}{\sqrt{2\pi y}} e^{-\frac{y}{2}}
+\end{align*}
+
+\begin{figure}[htbp] 
+    \centering  
+    \includegraphics[width=0.7\textwidth]{Figures/Figure_7.png}
+    \caption{Histogram of squared Gaussian random variables and corresponding PDF}
+    \label{fig:fig7}
+\end{figure}
+
+As shown by Figure \ref{fig:fig7}, the theory agrees well to the 
+histogram of squared Gaussian random variables.
+
+Lastly, consider $p(x) = \mathcal{U}(x|0,2\pi)$,
+and transformation $y = f(x) = \sin(x)$.
+The inverse of $f(\cdot)$ is also not one-to-one within the range of $x$.
+
+There are four branches of the inverse function within $[0,2\pi]$,
+and it is better to defind $\text{Arcsin}(\cdot)$ function 
+that maps $[0, 1] \to [0, \frac{\pi}{2}]$.
+\begin{equation*}
+  x = f^{-1}(y) = \begin{cases}
+    \text{Arcsin}(y), & 0 \leq x \leq \frac{\pi}{2}, 0 \leq y \leq 1 \\ 
+    \pi - \text{Arcsin}{(y)}, & \frac{\pi}{2} \leq x \leq \pi, 0 \leq y \leq 1 \\
+    \pi + \text{Arcsin}(-y), & \pi \leq x \leq \frac{3\pi}{2}, -1 \leq y \leq 0 \\
+    2\pi - \text{Arcsin}(-y), & \frac{3\pi}{2} \leq x \leq 2\pi, -1 \leq y \leq 0
+  \end{cases}
+\end{equation*}
+
+Also, $|dy/dx| = |\cos(x)|$.
+
+Now, the transformed PDF can be calculated as:
+\begin{equation*}
+  p(y) = \sum^{2}_{i=1} \frac{p(x)}{|dy/dx|}\bigg|_{x = f^{-1}_i(y)} = \sum^{2}_{i=1} \frac{1}{2\pi |\cos(x)|}\bigg|_{x = f^{-1}_i(y)}, \quad 0 \leq y \leq 1
+\end{equation*}
+
+$|\cos(x)| = \sqrt{1-y^2}$ for all four branches of $f^{-1}(\cdot)$, so 
+\begin{equation*}
+  p(y) = \frac{2}{2\pi \sqrt{1-y^2}} = \frac{1}{\pi \sqrt{1-y^2}}, \quad 0 \leq y \leq 1
+\end{equation*}
+
+Similarly, $p(y) = \frac{1}{\pi \sqrt{1-y^2}}, \quad -1 \leq y \leq 0$.
+Combining both parts, we have:
+\begin{equation*}
+  p(y) = \frac{1}{\pi \sqrt{1-y^2}}, \quad -1 \leq y \leq 1
+\end{equation*}
+
+\section{Inverse CDF Method}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Alpha-stable Distribution}
 
 \section{Conclusion}
 
-
-\appendix
+\begin{thebibliography}{99}
+  \bibitem{labsheet} Cambridge University Engineering Department. 
+                      \textit{Random Variables and Random Number Generation Lab Sheet}. 2025.
+  \bibitem{Multinomial} S Sinharay. \textit{Discrete Probability Distributions}. ETS, Princeton, NJ, USA, 2010
+\end{thebibliography}
 
 
 
